@@ -1,0 +1,114 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!--
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+  <button id="test">test</button>
+
+<script type="text/javascript">
+var test = document.getElementById("test");
+test.onclick=function(){
+  var data=[];
+  var ul = document.getElementById("source");
+  var lis=ul.getElementsByTagName("li");
+//  var con = lis[0].innerText;
+//  var city=con.slice(0,con.indexOf("空"));
+//  var grade=con.slice(con.indexOf(":")-1);
+  var gg = lis[0].getElementsByTagName("b")[0].innerHTML;
+  for(var i=0;i<lis.length;i++){
+    var con = lis[i].innerText;
+    var city=con.slice(0,con.indexOf("空"));
+    var grade=con.slice(con.indexOf(":")-1);
+    data.push([city,grade]);
+  }
+  //var content = lis.childNodes[2].innerHTML;
+//  alert("11");
+//alert(gg+" and "+grade);
+alert(data[3]);
+   //document.write(content);
+}
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+
+function getData() {
+
+var data=[];
+var ul = document.getElementById("source");
+var lis=ul.getElementsByTagName("li");
+for(var i=0;i<lis.length;i++){
+  var con = lis[i].innerText;
+  var city=con.slice(0,con.indexOf("空"));
+  var grade=con.slice(con.indexOf(":")-1);
+  data.push([city,grade]);
+}
+
+  return data;
+
+}
+
+
+function sortAqiData(data) {
+   return data.sort(function(a,b){
+     return a[1]-b[1];
+   });
+}
+
+
+function render(data) {
+var ul = document.getElementById("resort");
+var seq = ["一","二","三","四","五","六","七"];
+data.forEach(function(value,index){
+  var li = document.createElement("li");
+  //var text = document.createTextNode("第"+seq[index]+"名:"+value[0]+"空气质量"+"<b>"+value[1]+"</b>");
+ var text = "第"+seq[index]+"名:"+value[0]+"空气质量: "+"<b>"+value[1]+"</b>";
+  li.innerHTML=text;
+//  li.appendChild(text);
+  ul.appendChild(li);
+});
+}
+
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  render(aqiData);
+}
+
+
+function init() {
+  var btn = document.getElementById("sort-btn");
+  btn.onclick= btnHandle;    
+
+
+}
+
+init();
+
+</script>
+</body>
+</html>
