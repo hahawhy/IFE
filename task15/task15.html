@@ -71,7 +71,16 @@ for(var i=0;i<lis.length;i++){
   return data;
 
 }
-
+/*值得学习的的例子 map
+var li=document.getElementById("source").getElementsByTagName("li");
+      var data=[].map.call(li,function(value){
+          var index=value.innerText.indexOf("空气质量");
+          var str1=value.innerText.slice(0,index);
+          var str2=value.getElementsByTagName("b")[0].innerText;
+          return [str1,str2];
+      });
+      return data;
+*/
 
 function sortAqiData(data) {
    return data.sort(function(a,b){
@@ -87,7 +96,9 @@ data.forEach(function(value,index){
   var li = document.createElement("li");
   //var text = document.createTextNode("第"+seq[index]+"名:"+value[0]+"空气质量"+"<b>"+value[1]+"</b>");
  var text = "第"+seq[index]+"名:"+value[0]+"空气质量: "+"<b>"+value[1]+"</b>";
-  li.innerHTML=text;
+  li.innerHTML=text;//注意innerHTML是= 不是()不要老忘记！！
+  //注意innerHTML是= 不是()不要老忘记！！
+  //注意innerHTML是= 不是()不要老忘记！！
 //  li.appendChild(text);
   ul.appendChild(li);
 });
@@ -102,7 +113,7 @@ function btnHandle() {
 
 function init() {
   var btn = document.getElementById("sort-btn");
-  btn.onclick= btnHandle;    
+  btn.onclick= btnHandle;    //注意这里不要加括号，加了括号就不点按钮便自执行了
 
 
 }
