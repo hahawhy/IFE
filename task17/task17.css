@@ -1,0 +1,19 @@
+.aqi-chart-wrap{
+  width:1200px;
+  height:600px;
+  border:2px solid #ccc;
+  display: flex;
+  margin-top:10px;
+  flex-flow: row;
+  align-items: flex-end;
+}
+.aqi-chart-wrap div{
+flex:1;
+border:1px solid #bbb;
+}
+.aqi-chart-wrap div:hover,
+.aqi-chart-wrap div:focus{
+  content:attr(title);
+  display: block;
+  border:2px solid #ccc;
+}
