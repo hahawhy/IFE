@@ -1,0 +1,26 @@
+.box{
+  margin-top: 2em;
+  border: 2px solid #bbb;
+  text-align: center;
+}
+.btn-in, .btn-out{
+  display: inline;
+}
+.btn-out{
+  margin-left: 20px;
+}
+.box-number{
+  margin-top: 10px;
+  padding: 0 60px;
+}
+.box-number div{
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 40px;
+  background-color: #ff4400;
+  color: #fff;
+  font-family: sans-serif;
+  display: inline-block;
+}
