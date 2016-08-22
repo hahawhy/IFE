@@ -1,0 +1,30 @@
+.box{
+  margin-top: 2em;
+  border: 2px solid #bbb;
+  text-align: center;
+  height: 400px;
+}
+.btn-in, .btn-out{
+  display: inline;
+}
+.btn-out{
+  margin-left: 20px;
+}
+#btn-bubble-sort{
+  margin-left: 20px;
+}
+.box-number{
+  margin-top: 10px;
+  padding: 0 60px;
+  height: 300px;
+  border: 1px solid #bbb;
+  display: flex;
+  align-items: flex-end;
+}
+.box-number div{
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #ff4400;
+  color: #fff;
+  font-family: sans-serif;
+}
