@@ -42,7 +42,7 @@ function myBubbleSort(a){
   var timer = null;
 
 //  timer = setInterval("run()",50);
-
+//定时器动画看不了啊啊，只能看到最终结果，设置了断点才能看到一步一步的。。。
   for(var i=0;i<a.length-1;i++){
     for(var j=0;j<a.length-1-i;j++){
       if(a[j]>a[j+1]){
